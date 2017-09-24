@@ -1,0 +1,152 @@
+{
+    "version": 8,
+    "sources": {
+        "tilehut": {
+            "type": "vector",
+            "tiles": [
+                "http://localhost:8000/colorado/{z}/{x}/{y}.pbf"
+            ]
+        },
+        "county": {
+            "type": "vector",
+            "tiles": [
+                "http://localhost:8000/county9/{z}/{x}/{y}.pbf"
+            ]
+        }
+    },
+    "layers": [{
+        "id": "background",
+        "paint": {
+            "background-color": "#C5D1ED"
+        },
+        "type": "background"
+    } ,{
+        "id": "county",
+        "source": "county",
+        "source-layer": "county",
+        "paint": {
+            "fill-color": "purple",
+            "fill-outline-color": "black",
+            "fill-opacity": 0.5
+        },
+        "type": "fill"
+    }, {
+        "id": "transportation",
+        "source": "tilehut",
+        "source-layer": "transportation",
+        "paint": {
+            "line-color": "#EDF0FD",
+            "line-width": 3
+        },
+        "type": "line"
+    }, {
+        "id": "waterway",
+        "source": "tilehut",
+        "source-layer": "waterway",
+        "paint": {
+            "line-color": "yellow",
+            "line-width": 4
+        },
+        "type": "line"
+    }, {
+        "id": "boundary",
+        "source": "tilehut",
+        "source-layer": "boundary",
+        "paint": {
+            "line-color": "gold",
+            "line-width": 3
+        },
+        "type": "line"
+    },{
+        "id": "landcover",
+        "source": "tilehut",
+        "source-layer": "landcover",
+        "paint": {
+            "fill-color": "gray"
+        },
+        "type": "fill"
+    }, {
+        "id": "park",
+        "source": "tilehut",
+        "source-layer": "park",
+        "paint": {
+            "fill-color": "green"
+        },
+        "type": "fill"
+    } ,{
+        "id": "water",
+        "source": "tilehut",
+        "source-layer": "water",
+        "paint": {
+            "fill-color": "blue"
+        },
+        "type": "fill"
+    }, {
+        "id": "building",
+        "source": "tilehut",
+        "source-layer": "building",
+        "paint": {
+            "fill-color": "teal"
+        },
+        "type": "fill"
+    },  {
+        "id": "poi",
+        "source": "tilehut",
+        "source-layer": "poi",
+        "paint": {
+            "circle-color": "blue",
+            "circle-radius": 20,
+            "circle-blur": 1
+        },
+        "type": "circle"
+    },  {
+        "id": "mountain_peak",
+        "source": "tilehut",
+        "source-layer": "mountain_peak",
+        "paint": {
+            "circle-color": "black",
+            "circle-radius": 4,
+            "circle-blur": 1
+        },
+        "type": "circle"
+    }, {
+        "id": "water_name",
+        "source": "tilehut",
+        "source-layer": "water_name",
+        "layout": {
+            "text-field": "{name}",
+            "text-size": 23
+        },
+        "paint": {
+            "text-color": "yellow"
+        },
+        "type": "symbol"
+    }, {
+        "id": "county_name",
+        "source": "county",
+        "source-layer": "county",
+        "layout": {
+            "text-field": "{NAME}",
+            "text-size": 16
+        },
+        "paint": {
+            "text-color": "yellow"
+        },
+        "type": "symbol"
+    }, {
+        "id": "poiname",
+        "source": "tilehut",
+        "source-layer": "poi",
+        "layout": {
+            "text-field": "{name}",
+            "text-size": 14
+        },
+        "paint": {
+            "text-color": "green"
+        },
+        "type": "symbol"
+    }],
+    "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf"
+    
+    
+}
